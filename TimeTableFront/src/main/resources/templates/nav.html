@@ -1,0 +1,104 @@
+<nav th:fragment="navbar" class="navbar navbar-expand-sm navbar-dark bg-primary  my-3">
+  <div class="container-fluid">
+    <canvas class="img-fluid rounded-circle" id='canvas' width='80' height='66'></canvas>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a th:if="${activemenu}==1" class="nav-link active" aria-current="page" href="index.html" th:href="'/'">Home</a>
+          <a th:unless="${activemenu}==1" class="nav-link" aria-current="page" href="index.html" th:href="'/'">Home</a>
+        </li>
+        <li class="nav-item">
+          <a th:if="${activemenu}==2" class="nav-link active" aria-current="page" href="studentlist.html" th:href="'/c-students'">Student</a>
+          <a th:unless="${activemenu}==2" class="nav-link" aria-current="page" href="studentlist.html" th:href="'/c-students'">Student</a>
+        </li>
+        <li class="nav-item">
+          <a th:if="${activemenu}==3" class="nav-link active" aria-current="page" href="roomlist.html" th:href="'/c-classrooms'">Room</a>
+          <a th:unless="${activemenu}==3" class="nav-link" aria-current="page" href="roomlist.html" th:href="'/c-classrooms'">Room</a>
+        </li>
+        <li class="nav-item">
+          <a th:if="${activemenu}==4" class="nav-link active" aria-current="page" href="teachers.html" th:href="'/c-teachers'">Teacher</a>
+          <a th:unless="${activemenu}==4" class="nav-link" aria-current="page" href="teachers.html" th:href="'/c-teachers'">Teacher</a>
+        </li>
+        <li class="nav-item">
+          <a th:if="${activemenu}==5" class="nav-link active" aria-current="page" href="studentclasslist.html" th:href="'/c-studentclasses'">Class</a>
+          <a th:unless="${activemenu}==5" class="nav-link" aria-current="page" href="studentclasslist.html" th:href="'/c-studentclasses'">Class</a>
+        </li>
+        <li class="nav-item">
+          <a th:if="${activemenu}==6" class="nav-link active" aria-current="page" href="subjectlist.html" th:href="'/c-subjects'">Subject</a>
+          <a th:unless="${activemenu}==6" class="nav-link" aria-current="page" href="subjectlist.html" th:href="'/c-subjects'">Subject</a>
+        </li>
+        <li class="nav-item">
+          <a th:if="${activemenu}==7" class="nav-link active" aria-current="page" href="studentclass.html" th:href="'/c-timetablelists'">TimeTable</a>
+          <a th:unless="${activemenu}==7" class="nav-link" aria-current="page" href="studentclass.html" th:href="'/c-timetablelists'">TimeTable</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" target="_blank" href="admin.html" th:href="'/admin'">Login Teacher</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<nav th:fragment="adminnavbar" class="navbar navbar-expand-sm navbar-primary bg-primary bg-opacity-50 my-3">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-white" aria-current="page" href="admin.html" th:href="'/admin'">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" aria-current="page" href="adminteacher.html" th:href="'/adminteacher'">Add Teacher</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" aria-current="page" href="adminsubject.html" th:href="'/adminsubject'">Add Subject</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" aria-current="page" href="adminclassroom.html" th:href="'/adminclassroom'">Add ClassRoom</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" aria-current="page" href="adminstudent.html" th:href="'/adminstudent'">Add Student</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" aria-current="page" href="adminstudentclass.html" th:href="'/adminstudentclass'">Add Class</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" aria-current="page" href="adminstudentclass.html" th:href="'/adminstudentclass'">Add TimeTable</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" aria-current="page" href="#" th:href="'/logout'">Log out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<nav th:fragment="teachernavbar" class="navbar navbar-expand-sm navbar-primary bg-primary bg-opacity-75 my-3">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent3">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-white" aria-current="page" href="teacherhome.html" th:href="'/teacherhome'">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" aria-current="page" href="teachertimetable.html" th:href="'/teachertimetable'">My TimeTable</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" aria-current="page" href="teachers.html" th:href="'/teachers'">My</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" aria-current="page" href="#" th:href="'/logout'">Log out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
