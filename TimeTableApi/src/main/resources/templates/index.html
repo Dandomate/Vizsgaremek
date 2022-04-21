@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timetable</title>
+    <style>
+            th, td{
+                border: 1px solid black;
+                margin: 0px;
+            }
+            tr{
+                background-color: rgba(20, 20, 20, 0.2);
+            }
+            tr:hover{
+                background-color: rgba(20, 20, 20, 0.1);
+            }
+            caption{
+                background-color: rgba(20, 20, 20, 0.2);
+                padding: 10px;
+                margin: 5px 0 10px 0;
+                font-weight: bold;
+            }
+            .back-auth{
+                background-color: rgba(240, 0, 0, 0.2);
+            }
+            .back-auth:hover{
+                background-color: rgba(240, 0, 0, 0.1);
+            }
+            a{
+                color: navy;
+            }
+            a:hover{
+                color: black;
+            }
+        </style>
+</head>
+<body>
+<table cellpadding="10">
+    <caption>TimeTable REST API</caption>
+    <tr>
+        <th>Request method</th>
+        <th>url path</th>
+        <th>web service</th>
+        <th>authorization</th>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/students">students</a></td>
+        <td>A tanulok névsora</td>
+        <td>engedélyezett</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/subjects">subjects</a></td>
+        <td>A tantárgyak listája</td>
+        <td>engedélyezett</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/classrooms">classrooms</a></td>
+        <td>A termek listája</td>
+        <td>engedélyezett</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/studentclasses">studentclasses</a></td>
+        <td>The Class lists</td>
+        <td>engedélyezett</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/teachers">teachers</a></td>
+        <td>A tanarok listája</td>
+        <td>engedélyezett</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/teachersubjectlists">teachersubjectslists</a></td>
+        <td>A tanarok tantárgyainak listája</td>
+        <td>engedélyezett</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/teachers/71123567212">teachers/{OMA_TEACHER}</a></td>
+        <td>Egy kiválasztott tanar adatai</td>
+        <td>engedélyezett</td>
+    </tr>
+    <tr>
+    <td>GET</td>
+        <td><a href="/teachersubjectlist/71123567212">teachersubjectlist/{OMA_TEACHER}</a></td>
+        <td>A kiválasztott tanár által tanitott tantárgyak</td>
+        <td>engedélyezett</td>
+    </tr>
+    <td>GET</td>
+    <td><a href="/subjects/1">subjects/{SUBJECT_ID}</a></td>
+    <td>A kiválasztott tantárgy</td>
+    <td>engedélyezett</td>
+    </tr>
+    <tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/classrooms/2">classrooms/{DOORNUMBER_ID}</a></td>
+        <td>Egy kiválasztott terem adatai</td>
+        <td>engedélyezett</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/studentclasses/3">studentclasses/{CLASS_ID}</a></td>
+        <td>Egy kiválasztott osztály</td>
+        <td>engedélyezett</td>
+    </tr>
+        <td>GET</td>
+        <td><a href="/students/75957745931">students/{OMA_STUDENT}</a></td>
+        <td>Egy kiválasztott diák adatai</td>
+        <td>engedélyezett</td>
+    </tr>
+    <tr class="back-auth">
+        <td>POST</td>
+        <td>teachers</td>
+        <td>Add new Teacher</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr class="back-auth">
+        <td>PATCH</td>
+        <td>teachers/{OMA_TEACHER}</td>
+        <td>Teacher módosítása</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr class="back-auth">
+        <td>DELETE</td>
+        <td>teachers/{OMA_TEACHER}</td>
+        <td>Kiválasztott Teacher törlése</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/students">students</a></td>
+        <td>A diakok neve névsor szerint</td>
+        <td>engedélyezett</td>
+    </tr>
+</table>
+</body>
+</html>
