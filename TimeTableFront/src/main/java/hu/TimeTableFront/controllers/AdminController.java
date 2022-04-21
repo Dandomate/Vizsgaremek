@@ -174,18 +174,20 @@ public class AdminController {
     @GetMapping("/adminstudent") // menüpontból navigál
     public String newStudent(Model model){
         model.addAttribute("students",studentService.getStudentList());
+        model.addAttribute("studentclasses",studentclassService.getStudentClassList());
         return "adminstudent";
     }
 
     @PostMapping("/addstudent") // űrlapon Add gombot megnyom
     public String addStudent(@RequestParam("OMA_STUDENT") BigInteger OMA_STUDENT,
                                @RequestParam("Name") String Name,
-                             @RequestParam("CLASS_ID") int CLASS_ID,
-                             @RequestParam("CLASS_ID") String Cname,
+                               @RequestParam("CLASS_ID") int CLASS_ID,
+                               @RequestParam("Cname")String Cname,
                                Model model){
         int statusCode = studentService.addStudent(OMA_STUDENT,Name,CLASS_ID,Cname);
         model.addAttribute("status", statusCode);
         model.addAttribute("students", studentService.getStudentList());
+        model.addAttribute("studentclasses",studentclassService.getStudentClassList());
         return "adminstudent";
     }
 
@@ -196,7 +198,7 @@ public class AdminController {
         return "updatestudent";
     }
 
-
+/*
 
     @PostMapping("/update-stname") // országot cserél
     public String updateStudent(@RequestParam("OMA_STUDENT") BigInteger OMA_STUDENT,
@@ -208,6 +210,8 @@ public class AdminController {
         return "adminstudent";
     }
 
+
+ */
     @PostMapping("/delete-student")
     public String deleteStudent(@RequestParam("OMA_STUDENT") BigInteger OMA_STUDENT, Model model){
         System.out.println("@DeleteMapping: "+OMA_STUDENT);
