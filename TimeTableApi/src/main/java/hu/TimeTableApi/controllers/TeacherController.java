@@ -71,12 +71,25 @@ public class TeacherController {
     @PatchMapping("/teachers/{OMA_TEACHER}")
     public Teacher updateTeacher(@PathVariable("OMA_TEACHER") long OMA_TEACHER, @RequestBody Teacher teacher){
         String Name = teacher.getName();
-        //String Phone = teacher.getPhone();
-        //String Password = teacher.getPassword();
-       // boolean Admin = teacher.isAdmin();
-        return service.updateTeacher(OMA_TEACHER, Name/*,Phone,Password,Admin*/);
+        String Phone = teacher.getPhone();
+        String Password = teacher.getPassword();
+        return service.updateTeacher(OMA_TEACHER, Name,Phone,Password);
+    }
+/*
+    @PatchMapping("/teachers/{OMA_TEACHER}")
+    public Teacher updateTeacherPhone(@PathVariable("OMA_TEACHER") long OMA_TEACHER, @RequestBody Teacher teacher){
+        String Phone = teacher.getPhone();
+        return service.updateTeacherPhone(OMA_TEACHER, Phone);
     }
 
+    @PatchMapping("/teachers/{OMA_TEACHER}")
+    public Teacher updateTeacherPassword(@PathVariable("OMA_TEACHER") long OMA_TEACHER, @RequestBody Teacher teacher){
+        String Password = teacher.getPassword();
+        return service.updateTeacherPassword(OMA_TEACHER, Password);
+    }
+
+
+ */
     @DeleteMapping("/teachers/{OMA_TEACHER}")
     public void deleteTeacher(@PathVariable("OMA_TEACHER") long OMA_TEACHER){
         service.deleteTeacher(OMA_TEACHER);

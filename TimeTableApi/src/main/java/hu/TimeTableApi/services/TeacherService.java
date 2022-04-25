@@ -59,20 +59,42 @@ public class TeacherService {
 
 
 
-    public Teacher updateTeacher(long OMA_TEACHER, String Name/*,String Phone,String Password,boolean Admin*/) {
+    public Teacher updateTeacher(long OMA_TEACHER, String Name,String Phone,String Password/*,boolean Admin*/) {
         Optional<Teacher> optionalTeacher = repository.findById(OMA_TEACHER);
         if(optionalTeacher.isPresent()){
             Teacher teacher = optionalTeacher.get();
             teacher.setName(Name);
-           // teacher.setPhone(Phone);
-            //teacher.setPassword(Password);
+            teacher.setPhone(Phone);
+            teacher.setPassword(Password);
             //teacher.setAdmin(Admin);
+            return repository.save(teacher);
+        }
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+    }
+/*
+    public Teacher updateTeacherPhone(long OMA_TEACHER,String Phone) {
+        Optional<Teacher> optionalTeacher = repository.findById(OMA_TEACHER);
+        if(optionalTeacher.isPresent()){
+            Teacher teacher = optionalTeacher.get();
+            teacher.setPhone(Phone);
+            return repository.save(teacher);
+        }
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+    }
+
+    public Teacher updateTeacherPassword(long OMA_TEACHER,String Password) {
+        Optional<Teacher> optionalTeacher = repository.findById(OMA_TEACHER);
+        if(optionalTeacher.isPresent()){
+            Teacher teacher = optionalTeacher.get();
+            teacher.setPassword(Password);
             return repository.save(teacher);
         }
         throw new ResponseStatusException(HttpStatus.NOT_FOUND);
     }
 
 
+
+ */
 
     public Teacher addTeacher(Teacher teacher){
         Optional<Teacher> optionalTeacher = repository.findById(teacher.getOMA_TEACHER());

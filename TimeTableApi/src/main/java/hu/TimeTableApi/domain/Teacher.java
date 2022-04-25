@@ -3,6 +3,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.util.List;
 
@@ -10,11 +11,14 @@ import java.util.List;
 public class Teacher {
 
     @Id
+    @NotNull
     private long OMA_TEACHER;
     @NotNull
     @Size(min = 5,max = 30,message = "Your Name min 5 characters and max 30 characters")
     private String Name;
+    @Pattern(regexp="^[0-9]{5,13}$",message="Nem megfelelő formátum, vagy üres a mező vagy 13 nál nagyobb")
     private String Phone; //át kell irni varcharra mert ha van benne plusz
+    @Size(min = 5,max = 30,message = "min 5 max 30")
     private String Password;
     private boolean Admin;
 

@@ -2,11 +2,15 @@
 package hu.TimeTableApi.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.istack.NotNull;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -14,7 +18,12 @@ import java.util.List;
 public class AdminTeacher {
 
     @Id
+    @NotNull
+    @Size(min = 11,max = 11, message = "Az érték hosszabb mint 11 karakter")
+    @Pattern(regexp="^[0-9]",message="Nem megfelelő formátum")
     private long OMA_TEACHER;
+   // @Size(min = 5,max = 50, message = "A jelszó hossza kevesebb mint 5 karakter vagy több mint 50")
+    @Size(min = 5,max = 30,message = "min 5 max 30")
     private String Password;
     private boolean Admin;
 
