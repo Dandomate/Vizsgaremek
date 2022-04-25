@@ -16,6 +16,13 @@ public class Teacher {
         this.Admin = Admin;
     }
 
+    public Teacher(long OMA_TEACHER, String Name, String Phone, String Password) {
+        this.OMA_TEACHER = OMA_TEACHER;
+        this.Name = Name;
+        this.Password = Password;
+        this.Phone = Phone;
+    }
+
     public Teacher(long OMA_TEACHER, String Name) {
         this.OMA_TEACHER = OMA_TEACHER;
         this.Name = Name;

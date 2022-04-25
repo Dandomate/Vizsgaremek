@@ -33,7 +33,7 @@
     </div>
     <div class="mb-3">
       <label for="Phone" class="form-label">Phone</label>
-      <input type="number" class="form-control" id="Phone" name="Phone" placeholder="pl.: 06301234567">
+      <input type="text" class="form-control" id="Phone" name="Phone" placeholder="pl.: 06301234567">
     </div>
     <div class="mb-3">
       <label for="Password" class="form-label">Password</label>
@@ -63,9 +63,9 @@
       <td th:text="${teacher.Password}"></td>
       <td th:text="${teacher.Admin}"></td>
       <td>
-        <form method="post" th:action="@{/updateteacher}">
+        <form method="post"  th:action="@{/updateteacher}">
           <input type="hidden" name="OMA_TEACHER" th:value="${teacher.OMA_TEACHER}">
-          <button class="btn btn-success">Swap Name</button>
+          <button class="btn btn-success">Swap Teacher Data</button>
         </form>
       </td>
       <td>

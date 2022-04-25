@@ -53,19 +53,59 @@ public class AdminController {
         model.addAttribute("teacher", teacher);
         return "updateteacher";
     }
+/*
+    @PostMapping("updateteacherphone") // menüpontból navigál
+    public String updatingTeacherPhone(@RequestParam("OMA_TEACHER") long OMA_TEACHER, Model model){
+        Teacher teacher = service.getTeacher(OMA_TEACHER);
+        model.addAttribute("teacher", teacher);
+        return "updateteacherphone";
+    }
+
+    @PostMapping("updateteacherpassword") // menüpontból navigál
+    public String updatingTeacherPassword(@RequestParam("OMA_TEACHER") long OMA_TEACHER, Model model){
+        Teacher teacher = service.getTeacher(OMA_TEACHER);
+        model.addAttribute("teacher", teacher);
+        return "updateteacherpassword";
+    }
 
 
+ */
 
-    @PostMapping("/update-name") // országot cserél
+
+    @PostMapping("/update-name") // nevet cserél
     public String updateTeacher(@RequestParam("OMA_TEACHER") long OMA_TEACHER,
                                @RequestParam("Name") String Name,
+                                @RequestParam("Phone") String Phone,
+                                @RequestParam("Password") String Password,
                                Model model){
-        int status = service.updateTeacher(OMA_TEACHER, Name);
+        int status = service.updateTeacher(OMA_TEACHER, Name,Phone,Password);
+        model.addAttribute("status", status);
+        model.addAttribute("teachers", service.getTeachers());
+        return "adminteacher";
+    }
+/*
+    @PostMapping("/update-phone") // telt cserél
+    public String updateTeacherPhone(@RequestParam("OMA_TEACHER") long OMA_TEACHER,
+                                @RequestParam("Phone") String Phone,
+                                Model model){
+        int status = service.updateTeacher(OMA_TEACHER, Phone);
         model.addAttribute("status", status);
         model.addAttribute("teachers", service.getTeachers());
         return "adminteacher";
     }
 
+    @PostMapping("/update-password") // nevet cserél
+    public String updateTeacherPassword(@RequestParam("OMA_TEACHER") long OMA_TEACHER,
+                                @RequestParam("Password") String Password,
+                                Model model){
+        int status = service.updateTeacher(OMA_TEACHER, Password);
+        model.addAttribute("status", status);
+        model.addAttribute("teachers", service.getTeachers());
+        return "adminteacher";
+    }
+
+
+ */
     @PostMapping("/delete-teacher")
     public String deleteTeacher(@RequestParam("OMA_TEACHER") long OMA_TEACHER, Model model){
         System.out.println("@DeleteMapping: "+OMA_TEACHER);
@@ -102,7 +142,7 @@ public class AdminController {
 
 
 
-    @PostMapping("/update-sname") // országot cserél
+    @PostMapping("/update-sname") // nevet  cserél
     public String updateSubject(@RequestParam("SUBJECT_ID") int SUBJECT_ID,
                                 @RequestParam("sname") String sname,
                                 Model model){
@@ -149,7 +189,7 @@ public class AdminController {
 
 
 
-    @PostMapping("/update-space") // országot cserél
+    @PostMapping("/update-space") // nevet cserél
     public String updateClassRoom(@RequestParam("DOORNUMBER_ID") int DOORNUMBER_ID,
                                 @RequestParam("space") int space,
                                 Model model){
@@ -182,12 +222,11 @@ public class AdminController {
     public String addStudent(@RequestParam("OMA_STUDENT") BigInteger OMA_STUDENT,
                                @RequestParam("Name") String Name,
                                @RequestParam("CLASS_ID") int CLASS_ID,
-                               @RequestParam("Cname")String Cname,
                                Model model){
-        int statusCode = studentService.addStudent(OMA_STUDENT,Name,CLASS_ID,Cname);
+        int statusCode = studentService.addStudent(OMA_STUDENT,Name,CLASS_ID);
         model.addAttribute("status", statusCode);
         model.addAttribute("students", studentService.getStudentList());
-        model.addAttribute("studentclasses",studentclassService.getStudentClassList());
+      //  model.addAttribute("studentclasses",studentclassService.getStudentClassList());
         return "adminstudent";
     }
 
@@ -200,7 +239,7 @@ public class AdminController {
 
 /*
 
-    @PostMapping("/update-stname") // országot cserél
+    @PostMapping("/update-stname") // nevet cserél
     public String updateStudent(@RequestParam("OMA_STUDENT") BigInteger OMA_STUDENT,
                                   @RequestParam("Name") String Name,
                                   Model model){
@@ -248,7 +287,7 @@ public class AdminController {
 
 
 
-    @PostMapping("/update-cname") // országot cserél
+    @PostMapping("/update-cname") // nevet cserél
     public String updateStudentClass(@RequestParam("CLASS_ID") int CLASS_ID,
                                 @RequestParam("cname") String cname,
                                 Model model){

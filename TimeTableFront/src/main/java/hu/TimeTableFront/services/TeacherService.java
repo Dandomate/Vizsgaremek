@@ -72,9 +72,9 @@ public class TeacherService {
 
     }
 
-    public int updateTeacher(long OMA_TEACHER, String Name) {
+    public int updateTeacher(long OMA_TEACHER, String Name,String Phone,String Password) {
         String url = API_URL+"/teachers/{OMA_TEACHER}";
-        Teacher teacher = new Teacher(OMA_TEACHER, Name);
+        Teacher teacher = new Teacher(OMA_TEACHER, Name,Phone,Password);
 
         // az alábbi két sorral állítjuk be a restTemplate példányt arra, hogy tudja kezelni a patch kérést
         // ezért kellett a httpclient dependency a pom.xml-be

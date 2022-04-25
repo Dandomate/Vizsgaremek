@@ -24,9 +24,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configureAuth(AuthenticationManagerBuilder auth){
         try {
             auth.inMemoryAuthentication()
-                    .withUser("jacky").password("$2a$10$DjI.P92vFenHcKMQBb1nKeHqmOnsL/y/6vX4Dcr4Nxl0JO5UaV5xG").roles("USER", "ADMIN")
+                    .withUser("Administrator").password("$2a$10$DjI.P92vFenHcKMQBb1nKeHqmOnsL/y/6vX4Dcr4Nxl0JO5UaV5xG").roles("USER", "ADMIN")
                     .and()
-                    .withUser("jane").password("$2a$10$DjI.P92vFenHcKMQBb1nKeHqmOnsL/y/6vX4Dcr4Nxl0JO5UaV5xG").roles("TEACHER");
+                    .withUser("71123567012").password("$2a$10$DjI.P92vFenHcKMQBb1nKeHqmOnsL/y/6vX4Dcr4Nxl0JO5UaV5xG").roles("TEACHER");
         } catch (Exception ex) {
             System.out.println("ex in configureAuth(): "+ex.getMessage());
         }
@@ -34,15 +34,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        // http.csrf().disable();
-        // mert a POST új horgász 403-as hibát dob
-        // https://stackoverflow.com/questions/50486314/how-to-solve-403-error-in-spring-boot-post-request
-        // de akkor a log out nem kér megerősítést és azonnal kilép
-        // ugyanott lentebb írtak egy jobb megoldást: az űrlapban az action attribútum ez legyen: @{url}
         http.authorizeRequests()
                 .antMatchers("/", "/c-students","/c-teachers","/c-addteacher","/c-classrooms","/c-subjects" ,"/c-studentclasses","/c-teachersubjectlist/**","/c-studentlists/**","/c-timetablelists/**/**", "/pics/**", "/css/**").permitAll()
                 .antMatchers("/admin/**").hasRole("ADMIN")
-                .antMatchers("/teacherview/**").hasRole("TEACHER")
+                .antMatchers("/teacherhome/**", "**/css/**").hasRole("TEACHER")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
