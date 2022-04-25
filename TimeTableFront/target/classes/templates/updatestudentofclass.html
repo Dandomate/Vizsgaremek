@@ -11,29 +11,22 @@
     <title>Administration</title>
 </head>
 <body>
-
+<header class="container">
+    <nav th:replace="nav::adminnavbar"></nav>
+</header>
 <main class="container">
 
-    <h4>You can swap the name, phone and password of the Teacher</h4>
+    <h4>You can swap the Name of the Student</h4>
     <p>Name:
-        <label th:text="${teacher.Name}"></label>
+        <label th:text="${student.Name}"></label>
     </p>
-    <form  method="POST" th:action="@{/update-name}" class="row row-cols-lg-auto g-3 align-items-center">
+    <form  method="POST" th:action="@{/update-class}" class="row row-cols-lg-auto g-3 align-items-center">
         <!--            <input type="hidden" name="_method" value="patch">-->
-        <input type="hidden" name="OMA_TEACHER" th:value="${teacher.OMA_TEACHER}">
+        <input type="hidden" name="OMA_STUDENT" th:value="${student.OMA_STUDENT}">
         <div class="col-12">
-            <label for="Name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="Name" name="Name" aria-describedby="Name" th:value="${teacher.Name}">
+            <label for="cname" class="form-label">Name</label>
+            <input type="text" class="form-control" id="cname" name="cname" aria-describedby="cname" th:value="${student.cname}">
         </div>
-        <div class="col-12">
-            <label for="Phone" class="form-label">Phone</label>
-            <input type="text" class="form-control" id="Phone" name="Phone" aria-describedby="Phone" th:value="${teacher.Phone}">
-        </div>
-        <div class="col-12">
-            <label for="Password" class="form-label">Password</label>
-            <input type="text" class="form-control" id="Password" name="Password" aria-describedby="Password" th:value="${teacher.Password}">
-        </div>
-
         <div class="col-12">
             <br>
             <button type="submit" class="btn btn-warning">Update</button>

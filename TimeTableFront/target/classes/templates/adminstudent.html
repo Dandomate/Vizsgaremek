@@ -32,12 +32,12 @@
             <input type="text" class="form-control" id="Name" name="Name" placeholder="Firstname Name">
         </div>
         <div class="mb-3">
-            <label for="CLASS_ID" class="form-label">CLASS_ID</label>
-            <input type="text" class="form-control" id="CLASS_ID" name="CLASS_ID" placeholder="1">
-        </div>
-        <div class="mb-3">
-            <label for="Cname" class="form-label">CLASS Name</label>
-            <input type="text" class="form-control" id="Cname" name="Cname" placeholder="Class Name">
+            <select name="CLASS_ID" id="CLASS_ID">
+                <label for="Name" class="form-label">Class Name</label>
+                <option th:value="${studentclass.CLASS_ID}" th:each="studentclass : ${studentclasses}" >
+                    <p name="Cname" id="Cname" th:text="${studentclass.Cname}"></p>
+                </option>
+            </select>
         </div>
         <button type="submit" class="btn btn-primary">Add</button>
     </form>
