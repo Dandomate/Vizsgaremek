@@ -40,10 +40,7 @@ public class TimeTableController {
         return service.getTimeTableList(cname);
     }
 }
-
-
  */
-
 
 
 
@@ -60,6 +57,7 @@ public class TimeTableController {
     public TimeTable addTimeTable(@RequestBody TimeTable timetable){
         return service.addTimeTable(timetable);
     }
+
 /*
     @PatchMapping("/timetables/{TIMETABLE_ID}")
     public TimeTable updateTimeTable(@PathVariable("TIMETABLE_ID") int TIMETABLE_ID, @RequestBody TimeTable timetable){

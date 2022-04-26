@@ -39,9 +39,9 @@
     <caption>TimeTable REST API</caption>
     <tr>
         <th>Request method</th>
-        <th>url path</th>
-        <th>web service</th>
-        <th>authorization</th>
+        <th>Url path</th>
+        <th>Web service</th>
+        <th>Authorization</th>
     </tr>
     <tr>
         <td>GET</td>
@@ -75,8 +75,32 @@
     </tr>
     <tr>
         <td>GET</td>
-        <td><a href="/teachersubjectlists">teachersubjectslists</a></td>
+        <td><a href="/teachersubjectlist/71123567012">/teachersubjectlist/{OMA_TEACHER}</a></td>
         <td>A tanarok tantárgyainak listája</td>
+        <td>engedélyezett</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/studentlists/2">studentlists/2</a></td>
+        <td>A 2-es osztály tanulói</td>
+        <td>engedélyezett</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/timetablelists/71123567012/Monday">/timetablelists/{OMA_TEACHER}/Monday</a></td>
+        <td>A 2-es osztály hétfői órái</td>
+        <td>engedélyezett</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/timetablelists/2/Monday">/timetablelists/{CLASS_ID}/{day}</a></td>
+        <td>A 2-es osztály hétfői órái</td>
+        <td>engedélyezett</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/timetables/10">/timetablelists/{TIMETABLE_ID}</a></td>
+        <td>A 10-es id-val rendelkező óra</td>
         <td>engedélyezett</td>
     </tr>
     <tr>
@@ -99,7 +123,7 @@
     <tr>
     <tr>
         <td>GET</td>
-        <td><a href="/classrooms/2">classrooms/{DOORNUMBER_ID}</a></td>
+        <td><a href="/classrooms/3">classrooms/{DOORNUMBER_ID}</a></td>
         <td>Egy kiválasztott terem adatai</td>
         <td>engedélyezett</td>
     </tr>
@@ -114,6 +138,8 @@
         <td>Egy kiválasztott diák adatai</td>
         <td>engedélyezett</td>
     </tr>
+
+
     <tr class="back-auth">
         <td>POST</td>
         <td>teachers</td>
@@ -132,11 +158,119 @@
         <td>Kiválasztott Teacher törlése</td>
         <td>jelszóval védendő</td>
     </tr>
-    <tr>
-        <td>GET</td>
-        <td><a href="/students">students</a></td>
-        <td>A diakok neve névsor szerint</td>
-        <td>engedélyezett</td>
+
+    <tr class="back-auth">
+        <td>POST</td>
+        <td>students</td>
+        <td>Add new Students</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr class="back-auth">
+        <td>PATCH</td>
+        <td>students/{OMA_STUDENT}</td>
+        <td>student módosítása</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr class="back-auth">
+        <td>DELETE</td>
+        <td>students/{OMA_STUDENT}</td>
+        <td>Kiválasztott Student törlése</td>
+        <td>jelszóval védendő</td>
+    </tr>
+
+    <tr class="back-auth">
+        <td>POST</td>
+        <td>classrooms</td>
+        <td>Add new Classrooms</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr class="back-auth">
+        <td>PATCH</td>
+        <td>classrooms/{DOORNUMBER_ID}</td>
+        <td>classroom módosítása</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr class="back-auth">
+        <td>DELETE</td>
+        <td>classrooms/{DOORNUMBER_ID}</td>
+        <td>Kiválasztott Classroom törlése</td>
+        <td>jelszóval védendő</td>
+    </tr>
+
+    <tr class="back-auth">
+        <td>POST</td>
+        <td>studentclasses</td>
+        <td>Add new studentclass</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr class="back-auth">
+        <td>PATCH</td>
+        <td>studentclasses/{CLASS_ID}</td>
+        <td>studentclass módosítása</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr class="back-auth">
+        <td>DELETE</td>
+        <td>studentclasses/{CLASS_ID}</td>
+        <td>Kiválasztott studentclass törlése</td>
+        <td>jelszóval védendő</td>
+    </tr>
+
+    <tr class="back-auth">
+        <td>POST</td>
+        <td>subjects</td>
+        <td>Add new subject</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr class="back-auth">
+        <td>PATCH</td>
+        <td>subjects/{SUBJECT_ID}</td>
+        <td>subject módosítása</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr class="back-auth">
+        <td>DELETE</td>
+        <td>subjects/{SUBJECT_ID}</td>
+        <td>Kiválasztott subject törlése</td>
+        <td>jelszóval védendő</td>
+    </tr>
+
+    <tr class="back-auth">
+        <td>POST</td>
+        <td>subjects</td>
+        <td>Add new subject</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr class="back-auth">
+        <td>PATCH</td>
+        <td>subjects/{SUBJECT_ID}</td>
+        <td>subject módosítása</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr class="back-auth">
+        <td>DELETE</td>
+        <td>subjects/{SUBJECT_ID}</td>
+        <td>Kiválasztott subject törlése</td>
+        <td>jelszóval védendő</td>
+    </tr>
+
+    <tr class="back-auth">
+        <td>POST</td>
+        <td>timetables</td>
+        <td>Add new timetable</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr class="back-auth">
+        <td>PATCH</td>
+        <td>timetables/{TIMETABLE_ID}</td>
+        <td>timetable módosítása</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr class="back-auth">
+        <td>DELETE</td>
+        <td>timetables/{TIMETABLE_ID}</td>
+        <td>Kiválasztott timetable törlése</td>
+        <td>jelszóval védendő</td>
     </tr>
 </table>
 </body>
