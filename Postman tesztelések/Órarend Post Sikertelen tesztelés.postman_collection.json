@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "4106cc47-5b96-46e8-b58e-125375a110d5",
+		"name": "Órarend Post Sikertelen tesztelés",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8095/teachers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"Próba Tanár\",\r\n\"password\":\"próbajelszó\",\r\n\"phone\":\"0620312312\",\r\n\"oma_TEACHER\":,\r\n\"admin\":false}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8095/teachers",
+				"description": "Új próba tanár felvételnél sikertelen felvétel mivel az OM azonosítót ha üresen hagyjuk a @NotNull annotációnak köszöntehően nem történhet meg felvétel"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/1/students",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"próbapróbapróbapróbapróbapróbapróbapróbapróba\",\r\n    \"oma_STUDENT\": 75473927541\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8095/1/students",
+				"description": "Új próba diák felvétele sikertelen ugyanis több mint 30 karakter hosszú nevet adtunk mivel be van állítva hosszabb nem lehet"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/classrooms",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"door\": \"Próba\",\r\n    \"space\": 105\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8095/classrooms",
+				"description": "Sikertelen terem felvétel mivel csak 100 ig fogad el helyet "
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/studentclasses",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"cname\": \"\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8095/studentclasses",
+				"description": "Sikertelen osztály felvétel mivel üresen hagytuk a kitöltendő részt"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/subjects",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sname\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8095/subjects",
+				"description": "Sikertelen tantárgy felvétel üres mező miatt "
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/subjects/27",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sname\":\"PróbaTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8095/subjects/27",
+				"description": "Sikertelen tantárgy módosítás túl hosszú karakter sor miatt "
+			},
+			"response": []
+		}
+	]
+}

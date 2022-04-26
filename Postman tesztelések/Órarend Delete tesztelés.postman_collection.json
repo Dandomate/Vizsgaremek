@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "14c26bc1-6951-4c7d-96b9-a244c0d06905",
+		"name": "Órarend Delete tesztelés",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8095/teachers/12345678453",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8095/teachers/12345678453",
+				"description": "A próba tanár om azonosító által sikeres törlése"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/students/75473927541",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8095/students/75473927541",
+				"description": "A próba diák sikeres törlése az adatbázisból"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/classrooms/54",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8095/classrooms/54",
+				"description": "Sikeres terem törlés"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/studentclasses/ 31",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8095/studentclasses/ 31",
+				"description": "Sikeres osztály törlés"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/subjects/26",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8095/subjects/26",
+				"description": "Sikeres tantárgy törlés"
+			},
+			"response": []
+		}
+	]
+}

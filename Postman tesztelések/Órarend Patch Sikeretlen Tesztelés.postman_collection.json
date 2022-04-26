@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "0ab1e5e2-4bb7-4f34-8f27-0956502dfe7c",
+		"name": "Órarend Patch Sikeretlen Tesztelés",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8095/teachers/87546346321",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"Próba Tanár\",\r\n\"password\":\"prób\",\r\n\"phone\":\"0620312312\",\r\n\"oma_TEACHER\":87546346321,\r\n\"admin\":false}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8095/teachers/87546346321",
+				"description": "A próba tanár sikertelen adatmódosítása mivel a jelszónak minimum 5 karakternek kell lenni a tesztelés miatt 4 karaktert írtunk be csak a tesztelés miatt így hibát dob a módosításra "
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/students/75473927541",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"\",\r\n\"cname\":\"9\",\r\n\"oma_STUDENT\":75473927541\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8095/students/75473927541",
+				"description": "Sikertelen diák adat módosítás ugyanis név nelkül nem lehet módosítani "
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/classrooms/55",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"door\": \"Próba\",\r\n    \"space\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8095/classrooms/55",
+				"description": "Sikertelen terem módosítás mivel nem lehet a hely 0 "
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/studentclasses/32",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"cname\": \"11111111111\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8095/studentclasses/32",
+				"description": "Sikertelen osztály módosítás mivel 11 karaktert nem fogad el "
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "1e2d7d9c-2389-4390-8ad6-7977299839e8",
+		"name": "Órarend Patch Sikeres tesztelése",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8095/teachers/12345678453",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"Próba Tanár\",\r\n\"password\":\"próbajelszó\",\r\n\"phone\":\"06206543215\",\r\n\"oma_TEACHER\":12345678453,\r\n\"admin\":false}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8095/teachers/12345678453",
+				"description": "A próba tanár adatának sikeres módosítása a telefonszám résznél"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/students/75473927541",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Próba Próba\",\r\n    \"oma_STUDENT\": 75473927541\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8095/students/75473927541",
+				"description": "A próba diák nevének sikeres módosítása"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/classrooms/54",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"door\": \"Próba\",\r\n    \"space\": 30\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8095/classrooms/54",
+				"description": "Sikeres terem hely módosítás "
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/studentclasses/ 31",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n   {\"cname\": \"11\"} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8095/studentclasses/ 31",
+				"description": "Sikeres osztály módosítás "
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/subjects/26",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sname\": \"Próba Tantárgy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8095/subjects/26",
+				"description": "Sikeres tantárgy módosítása próba tantárgyra"
+			},
+			"response": []
+		}
+	]
+}

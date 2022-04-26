@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "89298792-67bb-45ff-b91e-3fa2b1d6b610",
+		"name": "Órarend GET tesztelés",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8095/students",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8095/students",
+				"description": "Az adott kérésre megjelenik a tanulók névsora "
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/subjects",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8095/subjects",
+				"description": "Az adott kérésre megjelenik a tantárgyak listája"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/classrooms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8095/classrooms",
+				"description": "Az adott kérésre megjelenik a termek listája"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/studentclasses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8095/studentclasses",
+				"description": "Az adott kérésre megjelenik az osztályok listája"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/teachers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8095/teachers",
+				"description": "Az adott kérésre megjelenik a tanárok listája"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/teachersubjectlist/71123567012",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8095/teachersubjectlist/71123567012",
+				"description": "Az adott kérésre megjelnik az adott tanár(OM azonosító) tantárgyainak listája"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/studentlists/2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8095/studentlists/2",
+				"description": "Az adott kérésben a tanulók listája jelenik meg a kért id.Az id által meghatározott osztály"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/timetablelist/71123567012/Monday",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8095/timetablelist/71123567012/Monday",
+				"description": "Az adott OM azonosító alapján a kérés az órarendre utal a meghatározott napnál"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/timetablelists/2/Monday",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8095/timetablelists/2/Monday",
+				"description": "Kérés a tanárgyak listájához a meghatározott id alapján az adott napnak"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/timetables/10",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8095/timetables/10",
+				"description": "Kérés az órarendhez id alapján"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/teachers/71123567212",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8095/teachers/71123567212",
+				"description": "Kérés egy kiválasztott tanárhoz OM azonosító által"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/teachersubjectlist/71123567212",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8095/teachersubjectlist/71123567212",
+				"description": "A kiválasztott tanár által tanitott tantárgyak\tOM azonosító által"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/subjects/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8095/subjects/1",
+				"description": "Kérés a kiválasztott tantárgyhoz Id alapján"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/classrooms/3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8095/classrooms/3",
+				"description": "Kérés kiválasztott terem adataihoz id alapján\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/studentclasses/3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8095/studentclasses/3",
+				"description": "Kérés egy kiválasztott osztályhoz id alapján"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/students/75957745931",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8095/students/75957745931",
+				"description": "Kérés egy kiválasztott diák adataihoz OM azonosító alapján"
+			},
+			"response": []
+		}
+	]
+}
