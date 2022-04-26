@@ -2,8 +2,8 @@
 package hu.TimeTableApi.services;
 
 
-import hu.TimeTableApi.domain.Teacher;
-import hu.TimeTableApi.domain.TeacherSubjectList;
+import hu.TimeTableApi.domain.*;
+//import hu.TimeTableApi.repositories.SubjectRepository;
 import hu.TimeTableApi.repositories.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,6 +19,9 @@ public class TeacherService {
 
     @Autowired
     private TeacherRepository repository;
+
+
+
 
     public List<Teacher> getTeachers() {
         return repository.nativeFindTeachers();
@@ -111,9 +114,10 @@ public class TeacherService {
         }
         throw new ResponseStatusException(HttpStatus.CONFLICT);
     }
-
-
  */
+
+
+
     public void deleteTeacher(long OMA_TEACHER) {
         Optional<Teacher> optionalTeacher = repository.findById(OMA_TEACHER);
         if(optionalTeacher.isPresent()){

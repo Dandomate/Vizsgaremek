@@ -2,7 +2,10 @@ package hu.TimeTableApi.controllers;
 
 
 import hu.TimeTableApi.domain.Student;
+import hu.TimeTableApi.domain.StudentClass;
 import hu.TimeTableApi.domain.StudentList;
+import hu.TimeTableApi.domain.Subject;
+import hu.TimeTableApi.services.StudentClassService;
 import hu.TimeTableApi.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,6 +18,7 @@ public class StudentController {
 
     @Autowired
     private StudentService service;
+
 
     @GetMapping("/students")
     public List<StudentList> getStudents(){
@@ -67,21 +71,18 @@ public Student addStudent(@RequestBody NewStudentRequest newStudentRequest){
 }
 
   */
-/*
 
-    @PatchMapping("/students/{OMA_STUDENT}y")
+
+    @PatchMapping("/students/{OMA_STUDENT}")
     public Student updateStudent(@PathVariable("OMA_STUDENT") BigInteger OMA_STUDENT,
-                                 @RequestBody("name") String name,
-                                 @RequestBody("studentclass") int studentclass)  {
+                                 @RequestBody Student student)
+                                  {
     String name = student.getName();
-
-        return service.updateStudent(OMA_STUDENT, name, studentclass);
+        return service.updateStudent(OMA_STUDENT, name);
     }
 
 
 
-
- */
     @DeleteMapping("/students/{OMA_STUDENT}")
     public void deleteStudent(@PathVariable("OMA_STUDENT") BigInteger OMA_STUDENT){
         service.deleteStudent(OMA_STUDENT);

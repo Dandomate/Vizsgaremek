@@ -1,6 +1,7 @@
 package hu.TimeTableApi.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
@@ -13,10 +14,9 @@ import java.util.List;
 public class Student {
 
     @Id
-    //@Size(min = 11,max = 11, message = "Az érték hosszabb mint 11 karakter")
-    //@Pattern(regexp="^[0-9]",message="Nem megfelelő formátum")
+    @NotNull
     private BigInteger OMA_STUDENT;
-    @Pattern(regexp="^[a-zA-Z]{1,30}$",message="Nem megfelelő formátum, vagy üres a mező vagy 30 nál nagyobb")
+    @Size(min = 5,max = 30,message = "Your Name min 5 characters and max 30 characters")
     private String name;
 
     @ManyToOne

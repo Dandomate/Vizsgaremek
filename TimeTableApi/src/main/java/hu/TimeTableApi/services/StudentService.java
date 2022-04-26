@@ -94,18 +94,17 @@ public class StudentService {
         return result;
     }
 
-/*
-    public Student updateStudent(BigInteger OMA_STUDENT, String name,int CLASS_ID) {
+
+    public Student updateStudent(BigInteger OMA_STUDENT, String name) {
         Optional<Student> optionalStudent = repository.findById(OMA_STUDENT);
         if(optionalStudent.isPresent()){
             Student student = optionalStudent.get();
             student.setName(name);
-            //student.setCLASS_ID(CLASS_ID);
             return repository.save(student);
         }
         throw new ResponseStatusException(HttpStatus.NOT_FOUND);
     }
-*/
+
 /*
     public Student updateStudent(BigInteger OMA_STUDENT, String name, int studentclass) {
         Optional<Student> optionalStudent = repository.findById(OMA_STUDENT);
