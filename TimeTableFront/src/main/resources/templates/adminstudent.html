@@ -33,9 +33,9 @@
         </div>
 
         <div class="mb-3">
-            <select name="CLASS_ID" id="CLASS_ID">
+            <select>
                 <label for="Name" class="form-label">Class Name</label>
-                <option th:value="${studentclass.CLASS_ID}" th:each="studentclass : ${studentclasses}" >
+                <option name="CLASS_ID" id="CLASS_ID" th:value="${studentclass.CLASS_ID}" th:each="studentclass : ${studentclasses}" >
                     <p name="Cname" id="Cname" th:text="${studentclass.Cname}"></p>
                 </option>
             </select>

@@ -28,6 +28,9 @@ public class AdminController {
     @Autowired
     private StudentClassService studentclassService;
 
+    @Autowired
+    private TimeTableService timeTableService;
+
     @GetMapping("/adminteacher") // menüpontból navigál
     public String newTeacher(Model model){
         model.addAttribute("teachers", service.getTeachers());
@@ -81,8 +84,9 @@ public class AdminController {
         int status = service.updateTeacher(OMA_TEACHER, Name,Phone,Password);
         model.addAttribute("status", status);
         model.addAttribute("teachers", service.getTeachers());
-        return "adminteacher";
+        return "index";
     }
+
 /*
     @PostMapping("/update-phone") // telt cserél
     public String updateTeacherPhone(@RequestParam("OMA_TEACHER") long OMA_TEACHER,
@@ -226,7 +230,7 @@ public class AdminController {
         int statusCode = studentService.addStudent(OMA_STUDENT,Name,CLASS_ID);
         model.addAttribute("status", statusCode);
         model.addAttribute("students", studentService.getStudentList());
-      //  model.addAttribute("studentclasses",studentclassService.getStudentClassList());
+        model.addAttribute("studentclasses",studentclassService.getStudentClassList());
         return "adminstudent";
     }
 
@@ -237,7 +241,7 @@ public class AdminController {
         return "updatestudent";
     }
 
-/*
+
 
     @PostMapping("/update-stname") // nevet cserél
     public String updateStudent(@RequestParam("OMA_STUDENT") BigInteger OMA_STUDENT,
@@ -250,7 +254,7 @@ public class AdminController {
     }
 
 
- */
+
     @PostMapping("/delete-student")
     public String deleteStudent(@RequestParam("OMA_STUDENT") BigInteger OMA_STUDENT, Model model){
         System.out.println("@DeleteMapping: "+OMA_STUDENT);
@@ -305,6 +309,50 @@ public class AdminController {
         model.addAttribute("status", status);
         model.addAttribute("studentclasses",studentclassService.getStudentClassList());
         return "adminstudentclass";
+    }
+
+    //****************************************************************************
+
+    @GetMapping("/admintimetable") // menüpontból navigál
+    public String newTimeTable(/*int CLASS_ID, String day,Model model*/){
+       // model.addAttribute("timetables", timeTableService.getTimeTableList(CLASS_ID,day));
+       // return "admintimetable";
+        return "sajathiba";
+    }
+/*
+    @PostMapping("/addtimetable") // űrlapon Add gombot megnyom
+        return "admintimetable";
+    }
+
+ */
+/*
+    @PostMapping("/updatetimetable") // menüpontból navigál
+        return "updatetimetable";
+    }
+
+
+
+    @PostMapping("/update-timetable") // nevet cserél
+        return "adminstimetable";
+    }
+ */
+
+    @PostMapping("/timetables/{TIMETABLE_ID}")
+    public String deleteTimeTable(@RequestParam("TIMETABLE_ID") int TIMETABLE_ID, Model model){
+        System.out.println("@DeleteMapping: "+TIMETABLE_ID);
+        int status = studentclassService.deleteStudentClass(TIMETABLE_ID);
+        System.out.println("status code: "+status);
+        model.addAttribute("status", status);
+        //model.addAttribute("timetables",timeTableService.getTimeTableList());
+        return "admintimetable";
+    }
+
+
+    @GetMapping("/adminteachersubject") // menüpontból navigál
+    public String newTeacherSubject(){
+        // model.addAttribute("timetables", timeTableService.getTimeTableList(CLASS_ID,day));
+        // return "admintimetable";
+        return "sajathiba";
     }
 }
 

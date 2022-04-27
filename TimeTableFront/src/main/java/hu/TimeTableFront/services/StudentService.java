@@ -56,7 +56,7 @@ public class StudentService {
         }
 
     }
-/*
+
     public int updateStudent(BigInteger OMA_STUDENT, String Name) {
         String url = API_URL+"/students/{OMA_STUDENT}";
         Student student = new Student(OMA_STUDENT, Name);
@@ -72,7 +72,7 @@ public class StudentService {
     }
 
 
- */
+
     public int deleteStudent(BigInteger OMA_STUDENT) {
         System.out.println("Service: "+(OMA_STUDENT/*-1*/));
         String url = API_URL+"/students/{OMA_STUDENT}";
