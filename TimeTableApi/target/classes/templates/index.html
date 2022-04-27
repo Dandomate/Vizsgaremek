@@ -64,212 +64,193 @@
     <tr>
         <td>GET</td>
         <td><a href="/studentclasses">studentclasses</a></td>
-        <td>The Class lists</td>
+        <td>Az osztályok listája</td>
         <td>engedélyezett</td>
     </tr>
     <tr>
         <td>GET</td>
         <td><a href="/teachers">teachers</a></td>
-        <td>A tanarok listája</td>
+        <td>A tanérok listája</td>
         <td>engedélyezett</td>
     </tr>
     <tr>
         <td>GET</td>
         <td><a href="/teachersubjectlist/71123567012">/teachersubjectlist/{OMA_TEACHER}</a></td>
-        <td>A tanarok tantárgyainak listája</td>
+        <td>OM azonosító által kiválasztott tanár  tantárgyainak listája</td>
         <td>engedélyezett</td>
     </tr>
     <tr>
         <td>GET</td>
-        <td><a href="/studentlists/2">studentlists/2</a></td>
-        <td>A 2-es osztály tanulói</td>
+        <td><a href="/studentlists/2">studentlists/{CLASS_ID}</a></td>
+        <td>Az adott Id-val meghatározott osztály tanulói</td>
         <td>engedélyezett</td>
     </tr>
     <tr>
         <td>GET</td>
-        <td><a href="/timetablelists/71123567012/Monday">/timetablelists/{OMA_TEACHER}/Monday</a></td>
-        <td>A 2-es osztály hétfői órái</td>
+        <td><a href="/timetablelist/71123567012/Monday">/timetablelist/{OMA_TEACHER}/{day}</a></td>
+        <td>Az adott OM azonosítóval meghatározott tanár adott nap szerinti órái</td>
         <td>engedélyezett</td>
     </tr>
     <tr>
         <td>GET</td>
         <td><a href="/timetablelists/2/Monday">/timetablelists/{CLASS_ID}/{day}</a></td>
-        <td>A 2-es osztály hétfői órái</td>
+        <td>Az adott Id-val meghatározott osztály adott nap szerinti órái</td>
         <td>engedélyezett</td>
     </tr>
     <tr>
         <td>GET</td>
         <td><a href="/timetables/10">/timetablelists/{TIMETABLE_ID}</a></td>
-        <td>A 10-es id-val rendelkező óra</td>
+        <td>A meghatározott Id-val rendelkező óra</td>
         <td>engedélyezett</td>
     </tr>
     <tr>
         <td>GET</td>
         <td><a href="/teachers/71123567212">teachers/{OMA_TEACHER}</a></td>
-        <td>Egy kiválasztott tanar adatai</td>
+        <td>Egy OM azonosító által kiválasztott tanár adatai</td>
         <td>engedélyezett</td>
     </tr>
     <tr>
-    <td>GET</td>
+        <td>GET</td>
         <td><a href="/teachersubjectlist/71123567212">teachersubjectlist/{OMA_TEACHER}</a></td>
-        <td>A kiválasztott tanár által tanitott tantárgyak</td>
+        <td>Egy OM azonosító által kiválasztott tanár által tanított tantárgyak</td>
         <td>engedélyezett</td>
     </tr>
     <td>GET</td>
     <td><a href="/subjects/1">subjects/{SUBJECT_ID}</a></td>
-    <td>A kiválasztott tantárgy</td>
+    <td>Id által kiválasztott tantárgy</td>
     <td>engedélyezett</td>
     </tr>
     <tr>
     <tr>
         <td>GET</td>
         <td><a href="/classrooms/3">classrooms/{DOORNUMBER_ID}</a></td>
-        <td>Egy kiválasztott terem adatai</td>
+        <td>Id által kiválasztott terem adatai</td>
         <td>engedélyezett</td>
     </tr>
     <tr>
         <td>GET</td>
         <td><a href="/studentclasses/3">studentclasses/{CLASS_ID}</a></td>
-        <td>Egy kiválasztott osztály</td>
+        <td>Id által kiválasztott osztály</td>
         <td>engedélyezett</td>
     </tr>
-        <td>GET</td>
-        <td><a href="/students/75957745931">students/{OMA_STUDENT}</a></td>
-        <td>Egy kiválasztott diák adatai</td>
-        <td>engedélyezett</td>
+    <td>GET</td>
+    <td><a href="/students/75957745931">students/{OMA_STUDENT}</a></td>
+    <td>Om azonosító által kiválasztott diák adatai</td>
+    <td>engedélyezett</td>
     </tr>
 
 
     <tr class="back-auth">
         <td>POST</td>
         <td>teachers</td>
-        <td>Add new Teacher</td>
+        <td>Új tanár hozzáadása</td>
         <td>jelszóval védendő</td>
     </tr>
     <tr class="back-auth">
         <td>PATCH</td>
         <td>teachers/{OMA_TEACHER}</td>
-        <td>Teacher módosítása</td>
+        <td>Tanár módosítása</td>
         <td>jelszóval védendő</td>
     </tr>
     <tr class="back-auth">
         <td>DELETE</td>
         <td>teachers/{OMA_TEACHER}</td>
-        <td>Kiválasztott Teacher törlése</td>
+        <td>Kiválasztott Tanár törlése</td>
         <td>jelszóval védendő</td>
     </tr>
 
     <tr class="back-auth">
         <td>POST</td>
         <td>students</td>
-        <td>Add new Students</td>
+        <td>Új tanulók hozzáadása</td>
         <td>jelszóval védendő</td>
     </tr>
     <tr class="back-auth">
         <td>PATCH</td>
         <td>students/{OMA_STUDENT}</td>
-        <td>student módosítása</td>
+        <td>Tanuló módosítása</td>
         <td>jelszóval védendő</td>
     </tr>
     <tr class="back-auth">
         <td>DELETE</td>
         <td>students/{OMA_STUDENT}</td>
-        <td>Kiválasztott Student törlése</td>
+        <td>Kiválasztott Tanuló törlése</td>
         <td>jelszóval védendő</td>
     </tr>
 
     <tr class="back-auth">
         <td>POST</td>
         <td>classrooms</td>
-        <td>Add new Classrooms</td>
+        <td>Új terem felvétele</td>
         <td>jelszóval védendő</td>
     </tr>
     <tr class="back-auth">
         <td>PATCH</td>
         <td>classrooms/{DOORNUMBER_ID}</td>
-        <td>classroom módosítása</td>
+        <td>Terem módosítása</td>
         <td>jelszóval védendő</td>
     </tr>
     <tr class="back-auth">
         <td>DELETE</td>
         <td>classrooms/{DOORNUMBER_ID}</td>
-        <td>Kiválasztott Classroom törlése</td>
+        <td>Kiválasztott terem törlése</td>
         <td>jelszóval védendő</td>
     </tr>
 
     <tr class="back-auth">
         <td>POST</td>
         <td>studentclasses</td>
-        <td>Add new studentclass</td>
+        <td>Új osztály felvétele</td>
         <td>jelszóval védendő</td>
     </tr>
     <tr class="back-auth">
         <td>PATCH</td>
         <td>studentclasses/{CLASS_ID}</td>
-        <td>studentclass módosítása</td>
+        <td>Osztály módosítása</td>
         <td>jelszóval védendő</td>
     </tr>
     <tr class="back-auth">
         <td>DELETE</td>
         <td>studentclasses/{CLASS_ID}</td>
-        <td>Kiválasztott studentclass törlése</td>
+        <td>Kiválasztott osztály törlése</td>
         <td>jelszóval védendő</td>
     </tr>
 
     <tr class="back-auth">
         <td>POST</td>
         <td>subjects</td>
-        <td>Add new subject</td>
+        <td>Új tantárgyak felvétele</td>
         <td>jelszóval védendő</td>
     </tr>
     <tr class="back-auth">
         <td>PATCH</td>
         <td>subjects/{SUBJECT_ID}</td>
-        <td>subject módosítása</td>
+        <td>Tantárgyak módosítása</td>
         <td>jelszóval védendő</td>
     </tr>
     <tr class="back-auth">
         <td>DELETE</td>
         <td>subjects/{SUBJECT_ID}</td>
-        <td>Kiválasztott subject törlése</td>
-        <td>jelszóval védendő</td>
-    </tr>
-
-    <tr class="back-auth">
-        <td>POST</td>
-        <td>subjects</td>
-        <td>Add new subject</td>
-        <td>jelszóval védendő</td>
-    </tr>
-    <tr class="back-auth">
-        <td>PATCH</td>
-        <td>subjects/{SUBJECT_ID}</td>
-        <td>subject módosítása</td>
-        <td>jelszóval védendő</td>
-    </tr>
-    <tr class="back-auth">
-        <td>DELETE</td>
-        <td>subjects/{SUBJECT_ID}</td>
-        <td>Kiválasztott subject törlése</td>
+        <td>Kiválasztott tantárgy törlése</td>
         <td>jelszóval védendő</td>
     </tr>
 
     <tr class="back-auth">
         <td>POST</td>
         <td>timetables</td>
-        <td>Add new timetable</td>
+        <td>Új órarend felvétele</td>
         <td>jelszóval védendő</td>
     </tr>
     <tr class="back-auth">
         <td>PATCH</td>
         <td>timetables/{TIMETABLE_ID}</td>
-        <td>timetable módosítása</td>
+        <td>Órarend módosítása</td>
         <td>jelszóval védendő</td>
     </tr>
     <tr class="back-auth">
         <td>DELETE</td>
         <td>timetables/{TIMETABLE_ID}</td>
-        <td>Kiválasztott timetable törlése</td>
+        <td>Kiválasztott órarend törlése</td>
         <td>jelszóval védendő</td>
     </tr>
 </table>
